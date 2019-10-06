@@ -8,6 +8,7 @@
                 <div class="card-header">List Kategori Artikel</div>
 
                 <div class="card-body">
+                <a href="{!! route('kategori_artikel.create')!!}" class="btn btn-success">Tambah Data</a>
                 <table border="1">
                      <tr>
                          <td>ID</td>
