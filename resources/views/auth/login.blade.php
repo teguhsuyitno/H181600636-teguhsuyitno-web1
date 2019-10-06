@@ -110,7 +110,7 @@
 <script>
 function refreshCaptcha(){
 $.ajax({
-url: "/refereshCapcha",
+url: "/refereshcapcha",
 type: 'get',
   dataType: 'html',        
   success: function(json) {

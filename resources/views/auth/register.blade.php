@@ -79,7 +79,13 @@
                         <div class="form-group row">
                             
                             <div class="offset-md-4 col-md-6">
-                               {!! captcha_img('flat') !!}
+                            
+                               <div class="hasil_refereshrecapcha">
+                               
+                                {!! captcha_img('flat') !!}
+                               </div>
+   
+                               <a href="javascript:void(0)" onclick="refreshCaptcha()">Refresh </a>
 
                             </div>
                         </div>
@@ -107,4 +113,22 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+function refreshCaptcha(){
+$.ajax({
+url: "/refereshcapcha",
+type: 'get',
+  dataType: 'html',        
+  success: function(json) {
+    $('.hasil_refereshrecapcha').html(json);
+  },
+  error: function(data) {
+    alert('Try Again.');
+  }
+});
+}
+</script>
 @endsection
